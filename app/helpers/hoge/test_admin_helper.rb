@@ -1,0 +1,2 @@
+module Hoge::TestAdminHelper
+end

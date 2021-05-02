@@ -1,0 +1,2 @@
+module Hogehoge::TestAdminHelper
+end

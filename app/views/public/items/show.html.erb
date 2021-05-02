@@ -1,0 +1,15 @@
+<h1>商品詳細（Public）</h1>
+  <h2>商品画像</h2>
+  <span><%= attachment_image_tag @item, :image %></span>
+  <h2>商品名</h2>
+  <span><%= @item.name %></span>
+  <h2>商品説明</h2>
+  <span><%= @item.introduction %></span>
+  <h2>税抜き価格</h2>
+  <span>¥<%= @item.price * 1.1 .round %>(税込み)</span>
+
+<%= form_with model:@cart_item,url:cart_items_path, local:true do |f| %>
+<%= f.select :amount, [["1", "1"], ["2", "2"], ["3", "3"], ["4", "4"]], include_blank: "選択して下さい" %>
+<%= f.hidden_field :item_id, value: @item.id%>
+<%= f.submit 'カートに入れる' %>
+<% end %>

@@ -1,0 +1,35 @@
+<h1>配達先登録/一覧</h1>
+<%= form_with model:@address, url:deliverys_path,local:true do |f| %>
+<table>
+  <tr>
+    <th>郵便番号</th>
+    <th><%= f.text_field :postal_code %></th>
+  </tr>
+  <tr>
+    <th>住所</th>
+    <th><%= f.text_field :addresses %></th>
+  </tr>
+  <tr>
+    <th>宛名</th>
+    <th><%= f.text_field :name %></th>
+  </tr>
+</table>
+<%= f.submit "新規登録" %>
+<% end %>
+<table>
+  <tr>
+    <th>郵便番号</th>
+    <th>住所</th>
+    <th>宛名</th>
+    <th></th>
+  </tr>
+  <% @addresses.each do |address| %>
+  <tr>
+    <th><%= address.postal_code %></th>
+    <th><%= address.addresses %></th>
+    <th><%= address.name %></th>
+    <th><%= link_to "編集する", edit_delivery_path(address.id) %>
+    <%= link_to "消去する", delivery_path(address.id),method: :delete, "date-confirm" => "本当に消去しますか？" %></th>
+  </tr>
+  <% end %>
+</table>

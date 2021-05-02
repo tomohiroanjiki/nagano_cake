@@ -1,0 +1,19 @@
+<h1>会員一覧</h1>
+<table width="300" >
+  <tr>
+    <th>会員ID</th>
+    <th>氏名</th>
+    <th>メールアドレス</th>
+    <th>スターテス</th>
+  </tr>
+</table>
+<% @customers.each do |f| %>
+<table width="200" >
+  <tr>
+    <tb ><%= f.id %></tb>
+    <tb><%= link_to f.last_name + f.first_name, admin_customer_path(f.id) %></tb>
+    <tb><%= f.email %></tb>
+    <tb><%= f.is_active %></tb>
+  </tr></br>
+</table>
+<% end %>

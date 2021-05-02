@@ -1,0 +1,12 @@
+<h1>商品一覧（Public）</h1>
+<% @items.each do |item| %>
+  <span><%= item.name %></span>
+  </br>
+  <span>
+    <%= link_to item_path(item.id) do %>
+      <%= attachment_image_tag item, :image %>
+    <% end %>
+  </span>
+  </br>
+  <span><%= item.price %></span></br>
+<% end %>

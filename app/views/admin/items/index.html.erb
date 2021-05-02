@@ -1,0 +1,20 @@
+<h1>商品一覧</h1>
+<span><%= link_to "+", new_admin_item_path %></span>
+<% @items.each do |item| %>
+<table>
+  <tr>
+    <th>商品ID</th>
+    <th>商品名</th>
+    <th>税抜価格</th>
+    <th>ジャンル</th>
+    <th>ステータス</th>
+  </tr>
+  <tr>
+    <th><%= item.id %></th>
+    <th><%= link_to item.name, admin_item_path(item.id) %></th>
+    <th><%= item.price %></th>
+    <th><%= "ジャンル" %></th>
+    <th><%= "ステータス" %></th>
+  </tr>
+</table></br>
+<% end %>

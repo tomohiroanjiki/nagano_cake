@@ -1,0 +1,33 @@
+<h1>商品詳細</h1>
+<table>
+  <tr>
+    <tb><%= attachment_image_tag @item, :image %></tb>
+  </tr></br>
+  <tr>
+    <tb>商品名  </tb>
+    <tb><%= @item.name %></tb>
+  </tr></br>
+  <tr>
+    <tb>商品説明  </tb>
+    <tb><%= @item.introduction %></tb>
+  </tr></br>
+  <tr>
+    <tb>ジャンル</tb>
+    <tb></tb>
+  </tr></br>
+  <tr>
+    <tb>税込価格</tb></br>
+    <tb>(税抜価格)  </tb>
+    <tb>
+      <%= (@item.price * 1.1).round %>
+      (<%= @item.price %>)円
+    </tb>
+  </tr></br>
+  <tr>
+    <tb>販売ステータス  </tb>
+    <tb></tb>
+  </tr>
+  </br>
+  </br>
+  <span><%= link_to "編集する", edit_admin_item_path(@item.id) %></span>
+</table>
